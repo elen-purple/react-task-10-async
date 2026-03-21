@@ -11,9 +11,8 @@ import {
   Wrap,
 } from "./FormStyled";
 import { useDispatch, useSelector } from "react-redux";
-import { nanoid } from "nanoid";
 import { getContacts } from "../../redux/selectors";
-import { addTask } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/operations";
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -24,7 +23,7 @@ export const Form = () => {
         onSubmit={(e) => {
           e.preventDefault();
           if (
-            tasks.find(
+            tasks.items.find(
               (item) => item.name === e.currentTarget.elements.name.value,
             )
           ) {
@@ -34,13 +33,12 @@ export const Form = () => {
             return;
           }
           dispatch(
-            addTask({
-              id: nanoid(4),
+            addContact({
               name: e.currentTarget.elements.name.value,
               number: e.currentTarget.elements.number.value,
             }),
-            e.currentTarget.reset(),
           );
+          e.currentTarget.reset();
         }}
       >
         <Title>Phonebook</Title>

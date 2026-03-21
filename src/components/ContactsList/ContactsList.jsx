@@ -2,7 +2,7 @@ import { ContactsItem } from "../ContactsItem/ContactsItem";
 import { List } from "./ContactsListStyled";
 import { useDispatch, useSelector } from "react-redux";
 import { getContacts, getFilter } from "../../redux/selectors";
-import { deleteTask } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/operations";
 
 export const ContactsList = () => {
   const contacts = useSelector(getContacts);
@@ -13,11 +13,11 @@ export const ContactsList = () => {
       <List
         onClick={(e) => {
           if (e.target.dataset.action === "delete") {
-            dispatch(deleteTask(e.target.closest("li").id));
+            dispatch(deleteContact(e.target.closest("li").id));
           }
         }}
       >
-        {contacts
+        {contacts.items
           .filter(({ name }) =>
             name.toLowerCase().includes(filter.toLowerCase()),
           )
