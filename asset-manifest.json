@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/react-task-10-async/static/js/main.9ed419f4.js",
+    "main.js": "/react-task-10-async/static/js/main.03c4093b.js",
     "static/media/phone.png": "/react-task-10-async/static/media/phone.b849744b1adb27a6c7a5.png",
     "index.html": "/react-task-10-async/index.html",
-    "main.9ed419f4.js.map": "/react-task-10-async/static/js/main.9ed419f4.js.map"
+    "main.03c4093b.js.map": "/react-task-10-async/static/js/main.03c4093b.js.map"
   },
   "entrypoints": [
-    "static/js/main.9ed419f4.js"
+    "static/js/main.03c4093b.js"
   ]
 }
