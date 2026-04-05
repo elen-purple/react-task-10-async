@@ -11,12 +11,12 @@ import {
   Wrap,
 } from "./FormStyled";
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts } from "../../redux/selectors";
+import { selectContacts } from "../../redux/selectors";
 import { addContact } from "../../redux/operations";
 
 export const Form = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector(getContacts);
+  const tasks = useSelector(selectContacts);
   return (
     <Div>
       <Forma

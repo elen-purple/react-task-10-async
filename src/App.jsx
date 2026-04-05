@@ -5,13 +5,13 @@ import { Filter } from "./components/Filter/Filter";
 import { GlobalStyle } from "./components/GlobalStyle/GlobalStyle";
 import { Title } from "./components/ContactsList/ContactsListStyled";
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts } from "./redux/selectors";
+import { selectContacts } from "./redux/selectors";
 import { useEffect } from "react";
 import { fetchContacts } from "./redux/operations";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { items, isLoading, error } = useSelector(getContacts);
+  const { isLoading, error } = useSelector(selectContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
